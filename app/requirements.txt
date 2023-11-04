@@ -1,0 +1,5 @@
+flask   
+flask-restx
+flask-sqlalchemy
+python-dotenv
+openai
