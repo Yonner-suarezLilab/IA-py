@@ -11,18 +11,19 @@ ns = Namespace("IA")
 class RequestIA(Resource):
     @ns.expect(requestIA)
     def post(self):
+        
         response = openai.Completion.create(
             engine = "gpt-3.5-turbo",
-            prompt = requestIA,
+            prompt = ns.payload["Question"],
             temperature = 0.9,
-            max_tokens = 150,
+            max_tokens = 100,
             top_p = 1,
-            frequenzy_penalty = 0,
+            frequency_penalty = 0,
             presence_penalty = 0.6
         )
 
         answer = response.choices[0].text.strip()
 
-        
+        print(answer)
 
-        return jsonify({"response": answer})
+        return jsonify({"response": str(answer) })

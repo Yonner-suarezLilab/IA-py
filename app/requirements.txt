@@ -3,3 +3,4 @@ flask-restx
 flask-sqlalchemy
 python-dotenv
 openai
+aiohttp==3.9.0b
