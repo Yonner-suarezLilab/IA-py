@@ -24,6 +24,6 @@ class RequestIA(Resource):
 
         answer = response.choices[0].text.strip()
 
-        print(answer)
+        print("Soy un cambio: ",answer)
 
         return jsonify({"response": str(answer) })
