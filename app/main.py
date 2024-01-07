@@ -1,7 +1,7 @@
 from flask import Flask
 
 from .extensions import api
-from .resources import ns
+from .resources import Employee, Employer
 import openai
 
 # secret key open ia 
@@ -13,7 +13,8 @@ def create_app():
 
     api.init_app(app)
 
-    api.add_namespace(ns)
+    api.add_namespace(Employee, path='/employees')
+    api.add_namespace(Employer, path='/employers')
     return app
 
 

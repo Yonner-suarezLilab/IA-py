@@ -2,28 +2,19 @@ from flask_restx import Resource, Namespace
 from flask import jsonify
 from .api_models import requestIA
 import openai
+from app.Utils.DataEmpleados import DataEmpleado
+from app.Utils.DataEmpleador import DataEmpleador
 
-ns = Namespace("IA")
+Employee = Namespace("Employees")
+Employer = Namespace("Employer")
+    
+@Employee.route("/GetEmployeesData")
+class Employees(Resource):
+    def get(self):
+        return jsonify({"response": DataEmpleado})
 
-
-
-@ns.route("/requesttIA")
-class RequestIA(Resource):
-    @ns.expect(requestIA)
-    def post(self):
-        
-        response = openai.Completion.create(
-            engine = "gpt-3.5-turbo",
-            prompt = ns.payload["Question"],
-            temperature = 0.9,
-            max_tokens = 100,
-            top_p = 1,
-            frequency_penalty = 0,
-            presence_penalty = 0.6
-        )
-
-        answer = response.choices[0].text.strip()
-
-        print("Soy un cambio: ",answer)
-
-        return jsonify({"response": str(answer) })
+@Employer.route("/GetEmployersData")
+class Employees(Resource):
+    def get(self):
+        return jsonify({"response": DataEmpleador})
+    

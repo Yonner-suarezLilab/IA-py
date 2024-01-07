@@ -6,3 +6,4 @@ from .extensions import api
 requestIA = api.model("request", {
     "Question": fields.String
 })
+
