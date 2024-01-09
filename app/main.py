@@ -14,6 +14,7 @@ def create_app():
     api.init_app(app)
 
     api.add_namespace(Employee, path='/employees')
+
     api.add_namespace(Employer, path='/employers')
     return app
 
