@@ -1,12 +1,14 @@
 
 DataEmpleado = [{
+    "id" : "1",
     "nombre" : "Claudio",
     "apellido" : "Echeverry",
     "Documento" : 37054555,
     "Email" : "ElDiablo@gmail.com",
     "Ocupacion" : "Gasista",
-    "Reputacion" : "4.4 / 5",
+    "Reputacion" : "4.4",
     "Direccion" : "Avenida 32 436",
+    "Coordenadas": "4.654, 7.654",#-31.471985, -64.229884 es el formato que se debe enviar
     "CP" : 7223,
     "Telefono" : 2241536987,
     "Foto" : "ImagenDePerfil.jpeg",
