@@ -1,5 +1,6 @@
 DataEmpleador = [
 {
+    "IdEmpleador" : 1,
     "nombre": "Soledad",
     "apellido": "Silveira",
     "Documento": 37054555,
@@ -11,6 +12,7 @@ DataEmpleador = [
     "Rol" : "Empleador",
 },
  {
+     "IdEmpleador" : 2,
     "nombre": "Luciano",
     "apellido": "Fernández",
     "Documento": 58473129,
@@ -22,6 +24,7 @@ DataEmpleador = [
     "Rol": "Empleador"
 },
 {
+    "IdEmpleador" : 3,
     "nombre": "Carolina",
     "apellido": "Gutiérrez",
     "Documento": 68903456,
@@ -33,6 +36,7 @@ DataEmpleador = [
     "Rol": "Empleador"
 },
 {
+    "IdEmpleador" : 4,
     "nombre": "Mariano",
     "apellido": "López",
     "Documento": 75310987,
@@ -44,6 +48,7 @@ DataEmpleador = [
     "Rol": "Empleador"
 },
 {
+    "IdEmpleador" : 5,
     "nombre": "Camila",
     "apellido": "Martínez",
     "Documento": 89624513,
@@ -55,6 +60,7 @@ DataEmpleador = [
     "Rol": "Empleador"
 },
 {
+    "IdEmpleador" : 6,
     "nombre": "Federico",
     "apellido": "Ríos",
     "Documento": 63257891,

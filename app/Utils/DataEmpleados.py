@@ -1,6 +1,6 @@
 
 DataEmpleado = [{
-    "id" : "1",
+    "IdEmpleado" : 1,
     "nombre" : "Claudio",
     "apellido" : "Echeverry",
     "Documento" : 37054555,
@@ -13,9 +13,11 @@ DataEmpleado = [{
     "Telefono" : 2241536987,
     "Foto" : "ImagenDePerfil.jpeg",
     "Rol" : "Empleado",
-    "TrabajosRealizados" : 19
+    "TrabajosRealizados" : 19,
+    "Resumen" : "Gasista matriculado con 12 años de experiencia en el rubro. Hago instalaciones eléctricas, instalaciones de artefactos eléctricos y reparaciones en general."
 },
 {
+    "IdEmpleado" : 2,
     "nombre": "Alejandra",
     "apellido": "González",
     "Documento": 48123698,
@@ -27,9 +29,11 @@ DataEmpleado = [{
     "Telefono": 5557891234,
     "Foto": "AlejandraPerfil.jpg",
     "Rol": "Empleado",
-    "TrabajosRealizados": 27
+    "TrabajosRealizados": 27,
+    "Resumen" : "Pintor con mas de 6 años de experiencia en el rubro."
 },
 {
+    "IdEmpleado" : 3,
     "nombre": "Roberto",
     "apellido": "Mendoza",
     "Documento": 81527933,
@@ -41,9 +45,11 @@ DataEmpleado = [{
     "Telefono": 7774567890,
     "Foto": "RobertoAvatar.png",
     "Rol": "Empleado",
-    "TrabajosRealizados": 34
+    "TrabajosRealizados": 34,
+    "Resumen" : "Albañil con experiencia comprobable, responsable y cumplidor"
 },
 {
+    "IdEmpleado" : 4,
     "nombre": "Laura",
     "apellido": "Pérez",
     "Documento": 63980215,
@@ -55,9 +61,11 @@ DataEmpleado = [{
     "Telefono": 3336547890,
     "Foto": "LauraFoto.jpg",
     "Rol": "Empleada",
-    "TrabajosRealizados": 42
+    "TrabajosRealizados": 42,
+    "Resumen" : "Jardinera certificada por la academia de Jardineros de Cierra Chica"
 },
 {
+    "IdEmpleado" : 5,
     "nombre": "Javier",
     "apellido": "López",
     "Documento": 92547863,
@@ -69,9 +77,11 @@ DataEmpleado = [{
     "Telefono": 9991234567,
     "Foto": "JavierPic.png",
     "Rol": "Empleado",
-    "TrabajosRealizados": 15
+    "TrabajosRealizados": 15, 
+    "Resumen" : "Cuento con matricula y certificacion en el rubro"
 },
 {
+    "IdEmpleado" : 6,
     "nombre": "Ana",
     "apellido": "Ramírez",
     "Documento": 73160984,
@@ -83,6 +93,7 @@ DataEmpleado = [{
     "Telefono": 8889876543,
     "Foto": "AnaProfile.jpg",
     "Rol": "Empleado",
-    "TrabajosRealizados": 23
+    "TrabajosRealizados": 23,
+    "Resumen" : "Empatica y responsable, con experiencia en el cuidado de ninos y adultos."
 }
 ]
