@@ -12,8 +12,7 @@ def create_agent():
 
     model = "gpt-3.5-turbo-16k"
 
-    #api_key="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"
-    api_key="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"
+    api_key=""
 
     return InstantNeo(
             api_key = api_key,
