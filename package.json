@@ -4,6 +4,7 @@
   "description": "ia",
   "main": "main.py",
   "scripts": {
+    "start": "run_commands.bat",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
