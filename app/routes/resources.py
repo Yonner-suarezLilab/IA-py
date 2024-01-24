@@ -4,7 +4,8 @@ from app.Utils.DataEmpleados import DataEmpleado
 from app.Utils.DataEmpleador import DataEmpleador
 from app.Utils.ResumenEmpleado import ResumenEmpleado
 from app.Utils.PropuestaEmpleadores import PropuestaEmpleador
-from ..models.EmployerDB import EmployerDB
+from ..models.tbl_aichamba_empleador import tbl_aichamba_empleador
+from ..models.tbl_aichamba_empleado import tbl_iachamba_empleado
 from ..Utils.db import db 
 from ..api_models import new_Employee
 
@@ -43,10 +44,11 @@ class Employees(Resource):
         email = data.get('Email')
         
         # Crea una nueva instancia de EmployerDB
-        new_employee = EmployerDB(nombre=name, email=email)
+        new_employeer = tbl_aichamba_empleador(nombre=name, email=email)
+        new_employeer = tbl_iachamba_empleado()
 
         # Agrega y guarda en la base de datos
-        db.session.add(new_employee)
+        db.session.add(new_employeer)
         db.session.commit()
 
         return jsonify({"response": "PropuestaEmpleador"})
