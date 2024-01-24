@@ -8,3 +8,4 @@ pymysql
 python-decouple
 Flask-Cors
 mysqlclient
+python-dotenv
