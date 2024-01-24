@@ -42,3 +42,19 @@ PropuestaEmpleador = [
     "Descripcion" : "Busco personal matriculado, necesito una conexion de gas para mi nuevo comercio,"
 }
     ]
+
+    ##1 notificacion
+    ##1 empleado Ya esta
+    ##1 
+
+    ##empleador
+    ##1 tiene varios trabajos/publicaciones    idempleados postulantes relacion vfarios a varios si ya se hizo va en 1 si no va en 0
+    ##
+
+    ##1 empleador tien una notificacion con el id empleado/postulante
+
+
+    ##tabla chat para empleador
+
+
+    ##notificaciones empleado frangmento de chat si es ia
