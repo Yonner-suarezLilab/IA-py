@@ -9,7 +9,4 @@ host = os.environ["MYSQL_HOST"]
 db = os.environ["MYSQL_DB"]
 port = os.environ["MYSQL_PORT"]
 
-conexion_db = f"mysql://{user}:{password}@{host}:{port}/{db}"
-
-
-print(conexion_db)
+SQLALCHEMY_DATABASE_URI = f"mysql://{user}:{password}@{host}:{port}/{db}"
