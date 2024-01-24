@@ -5,7 +5,7 @@ from app.Utils.DataEmpleador import DataEmpleador
 from app.Utils.ResumenEmpleado import ResumenEmpleado
 from app.Utils.PropuestaEmpleadores import PropuestaEmpleador
 from ..models.tbl_aichamba_empleador import tbl_aichamba_empleador
-from ..models.tbl_aichamba_empleado import tbl_iachamba_empleado
+from ..models.tbl_aichamba_empleado import tbl_aichamba_empleado
 from ..Utils.db import db 
 from ..api_models import new_Employee, new_employer
 
@@ -22,7 +22,7 @@ class Employees(Resource):
         name = data.get('Name')
         phone = data.get('Phone')
 
-        new_employee = tbl_iachamba_empleado(nombre=name, Telefono=phone)
+        new_employee = tbl_aichamba_empleado(nombre=name, Telefono=phone)
 
         # Agrega y guarda en la base de datos
         db.session.add(new_employee)
@@ -39,7 +39,9 @@ class AddEmployees(Resource):
 @Employee.route("/GetSummaryEmployee")
 class EmployeesSumary(Resource):
     def get(self):
-        return jsonify({"response": ResumenEmpleado})
+        empleados = db.session.query(tbl_aichamba_empleado).all()
+        return jsonify({"response":
+         empleados})
 
 @Employer.route("/GetEmployersData")
 class Employees(Resource):
