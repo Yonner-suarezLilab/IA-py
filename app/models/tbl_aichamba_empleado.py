@@ -1,7 +1,10 @@
 from ..Utils.db import db
+from flask import jsonify
+from dataclasses import dataclass
 
 
 # Definir modelos aquí
+@dataclass
 class tbl_aichamba_empleado(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     nombre = db.Column(db.String(80), nullable=False)
@@ -18,6 +21,26 @@ class tbl_aichamba_empleado(db.Model):
     Rol = db.Column(db.String(80))
     TrabajosRealizados = db.Column(db.Integer)
     Resumen = db.Column(db.Text)
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "nombre": self.nombre,
+            "email": self.email,
+            "IdEmpleado": self.IdEmpleado,
+            "apellido": self.apellido,
+            "Documento": self.Documento,
+            "Ocupacion": self.Ocupacion,
+            "Reputacion": self.Reputacion,
+            "Direccion": self.Direccion,
+            "CP": self.CP,
+            "Telefono": self.Telefono,
+            "Foto": self.Foto,
+            "Rol": self.Rol,
+            "TrabajosRealizados": self.TrabajosRealizados,
+            "Resumen": self.Resumen
+        }
+
 
     def __init__(self, nombre, email, IdEmpleado, apellido, Documento, Ocupacion, Reputacion, Direccion, CP, Telefono, Foto, Rol, TrabajosRealizados, Resumen):
         self.nombre = nombre

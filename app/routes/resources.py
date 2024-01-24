@@ -1,5 +1,5 @@
 from flask_restx import Resource, Namespace
-from flask import jsonify, request
+from flask import jsonify, request, json
 from app.Utils.DataEmpleados import DataEmpleado
 from app.Utils.DataEmpleador import DataEmpleador
 from app.Utils.ResumenEmpleado import ResumenEmpleado
@@ -15,6 +15,14 @@ Employer = Namespace("Employer")
 @Employee.route("/GetEmployeesData")
 class Employees(Resource):
     def get(self):
+        empleados = tbl_aichamba_empleado.query.all()
+        employees_json = [employee.to_dict() for employee in empleados]
+        return jsonify({"response": employees_json})
+    
+@Employee.route("/addEmployee")
+class AddEmployees(Resource):
+    @Employer.expect(new_employer)
+    def post(self):
         # Obtén los datos del cuerpo de la solicitud utilizando el modelo new_Employee
         data = request.json
 
@@ -27,13 +35,6 @@ class Employees(Resource):
         # Agrega y guarda en la base de datos
         db.session.add(new_employee)
         db.session.commit()
-
-        return jsonify({"response": DataEmpleado})
-    
-@Employee.route("/addEmployee")
-class AddEmployees(Resource):
-    @Employer.expect(new_employer)
-    def post(self):
         return jsonify({"response": DataEmpleado})
     
 @Employee.route("/GetSummaryEmployee")
