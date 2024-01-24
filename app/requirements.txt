@@ -4,3 +4,8 @@ flask-sqlalchemy
 python-dotenv
 openai
 aiohttp==3.9.0b
+pymysql
+python-decouple
+Flask-Cors
+mysqlclient
+python-dotenv
