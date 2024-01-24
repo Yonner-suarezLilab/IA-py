@@ -8,3 +8,8 @@ new_Employee = api.model("request", {
     "Email": fields.String
 })
 
+
+new_employer = api.model("request",{
+    "Name": fields.String,
+    "Phone": fields.String
+})
