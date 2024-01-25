@@ -1,16 +1,13 @@
 from flask import Flask
 from .extensions import api
 from flask_cors import CORS
-from flask_sqlalchemy import SQLAlchemy
-from .routes.resources import Employee, Employer
+from .routes.router_empleado import Empleados
+from.routes.router_empleador import Empleadores
 from .Utils.db import db
 from .config import SQLALCHEMY_DATABASE_URI
 
 app = Flask(__name__)
 api.init_app(app)
-
-
-print(SQLALCHEMY_DATABASE_URI)
 
 app.config["SQLALCHEMY_DATABASE_URI"] = SQLALCHEMY_DATABASE_URI
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
@@ -25,7 +22,7 @@ with app.app_context():
 CORS(app, resources={r"/*": {"origins": "*"}})
 
 
-api.add_namespace(Employee, path='/employees')
-api.add_namespace(Employer, path='/employers')
+api.add_namespace(Empleados, path='/Empleado')
+api.add_namespace(Empleadores, path='/Empleador')
 
 
