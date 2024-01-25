@@ -1,6 +1,4 @@
 from ..models.Empleador.tbl_aichamba_empleador import tbl_aichamba_empleador
-from flask_restx import reqparse
-from flask import json
 
 def create_empleador_from_json(args_dict):
     nuevo_empleador = tbl_aichamba_empleador(

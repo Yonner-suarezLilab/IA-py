@@ -1,8 +1,9 @@
-from ..logic.crear_empleador import create_empleador_from_json
 from ..models.Empleador.tbl_aichamba_trabajos import tbl_aichamba_trabajos 
-from flask_restx import Resource, Namespace, reqparse
-from ..api_models import  nuevo_empleador
+from ..api_models import  nuevo_empleador, nueva_notificacion_empleador
+from ..logic.crear_empleador import create_empleador_from_json
+from ..logic.crear_notificacion_empleador import create_notificacion_empleador_from_json
 from flask import jsonify, request, make_response
+from flask_restx import Resource, Namespace
 from ..Utils.db import db
 
 from app.models.Empleador.tbl_aichamba_empleador import tbl_aichamba_empleador
@@ -29,8 +30,8 @@ class Datos_Publicaciones(Resource):
 
         return jsonify({"response": trabajos_respuesta_json})
     
-@Empleadores.route("/PostProposalEmployer")
-class Employees(Resource):
+@Empleadores.route("/empleador")
+class Empleador(Resource):
     @Empleadores.expect(nuevo_empleador)  
     def post(self):
         
@@ -43,4 +44,21 @@ class Employees(Resource):
 
         response = make_response({"message": "Empleador creado exitosamente"}, 200)
 
+        return response
+
+@Empleadores.route("/notificacion_empleador")
+class EmployeesSumary(Resource):
+    @Empleadores.expect(nueva_notificacion_empleador)
+    def post(self):
+        
+        data = request.json
+
+        nueva_notificacion = create_notificacion_empleador_from_json(data)
+
+        # Agrega y guarda en la base de datos
+        db.session.add(nueva_notificacion)
+        db.session.commit()
+
+        response = make_response({"message": "Notificación creada exitosamente"}, 200)
+        
         return response

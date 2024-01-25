@@ -3,10 +3,21 @@ from flask_restx import fields
 from .extensions import api
 
 
-nuevo_empleado = api.model("request", {
+nuevo_empleado = api.model("nuevo_empleado", {
     "Name": fields.String,
-    "Email": fields.String
+    "Email": fields.String,
+    "Apellido": fields.String,
+    "Documento": fields.Integer,
+    "Ocupacion": fields.String,
+    "Reputacion": fields.String,
+    "Direccion": fields.String,
+    "Telefono": fields.String,
+    "Imagen": fields.String,
+    "Rol": fields.String,
+    "TrabajosRealizados": fields.Integer,
+    "Resumen": fields.String
 })
+
 
 
 nuevo_empleador = api.model("nuevo_empleador", {
@@ -18,4 +29,18 @@ nuevo_empleador = api.model("nuevo_empleador", {
     "Telefono": fields.String(description="Teléfono del empleador"),
     "Foto": fields.String(description="URL de la foto del empleador"),
     "Rol": fields.String(description="Rol del empleador")  
+})
+
+
+nueva_notificacion_empleado = api.model("NotificacionEmpleado", {
+    "mensaje_notificacion": fields.String(description="Mensaje de la notificación", required=True),
+    "idempleado": fields.Integer(description="ID del empleado", required=True),
+    "idempleador": fields.Integer(description="ID del empleador", required=True),
+})
+
+
+nueva_notificacion_empleador = api.model("NotificacionEmpleador", {
+    "mensaje_notificacion": fields.String(description="Mensaje de la notificación", required=True),
+    "idempleado": fields.Integer(description="ID del empleado", required=True),
+    "idempleador": fields.Integer(description="ID del empleador", required=True),
 })

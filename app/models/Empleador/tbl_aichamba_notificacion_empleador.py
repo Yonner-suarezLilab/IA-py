@@ -6,7 +6,7 @@ class tbl_aichamba_notificacion_empleador(db.Model):
     aich_int_idnotificacion_empleado = db.Column(db.Integer, primary_key=True, autoincrement=True)
     aich_vch_mensaje_notificacion = db.Column(db.Text, nullable = False)
     aich_vch_idempleado = db.Column(db.Integer, db.ForeignKey('tbl_aichamba_empleado.aich_int_idempleado'), nullable=False)
-    aich_vch_idempleador = db.Column(db.Integer, db.ForeignKey('tbl_aichamba_empleado.aich_int_idempleado'), nullable=False)
+    aich_vch_idempleador = db.Column(db.Integer, db.ForeignKey('tbl_aichamba_empleador.aich_int_idempleador'), nullable=False)
     aich_bit_activo = db.Column(db.Integer, nullable=False)
 
 
