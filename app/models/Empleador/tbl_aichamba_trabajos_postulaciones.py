@@ -2,13 +2,13 @@ from ...Utils.db import db
 
 class tbl_aichamba_trabajos_postulaciones(db.Model):
     aich_int_trabajos_postulaciones = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    aich_int_idtrabajo = db.Column(db.Integer, db.ForeignKey('tbl_aichamba_trabajo.aich_int_idtrabajo') ,nullable=False)
+    aich_int_idtrabajo = db.Column(db.Integer, db.ForeignKey('tbl_aichamba_trabajos.aich_int_idtrabajos') ,nullable=False)
     aich_int_idempleado = db.Column(db.Integer, db.ForeignKey('tbl_aichamba_empleado.aich_int_idempleado') ,nullable=False)
     aich_bit_activo = db.Column(db.Integer, nullable = False)
 
     # Relación muchos a muchos con Trabajo y Empleado
-    trabajo = db.relationship('tbl_aichamba_trabajo', backref='postulaciones')
-    empleado = db.relationship('tbl_aichamba_empleado', backref='postulaciones')
+    trabajo = db.relationship('tbl_aichamba_trabajos', foreign_keys=[aich_int_idtrabajo])
+    empleado = db.relationship('tbl_aichamba_empleado',  foreign_keys=[aich_int_idempleado])
 
     def to_dict(self):
         return {
