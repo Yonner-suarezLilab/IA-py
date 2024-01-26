@@ -16,12 +16,23 @@ class Employees(Resource):
         employees_json = [employee.to_dict() for employee in empleados]
 
         return jsonify({"response": employees_json})
+
+@Empleados.route("/datos_empleado")
+class Employee(Resource):
+    def get(self, empleado_id):
+        empleado_id = request.args.get('empleado_id')
+        print(empleado_id)
+        empleados = tbl_aichamba_empleado.query.get(empleado_id)
+        employees_json = [employee.to_dict() for employee in empleados]
+
+        return jsonify({"response": employees_json})
     
 @Empleados.route("/empleado")
 class AddEmployee(Resource):
     @Empleados.expect(nuevo_empleado)
     def post(self):
-        
+
+      try:  
         data = request.json
 
         empleado_nuevo = create_empleado_from_json(data)
@@ -33,6 +44,10 @@ class AddEmployee(Resource):
         response = make_response({"message": "Empleado creado exitosamente"}, 200)
 
         return response
+      except Exception as e:
+        error_message = {"error": str(e)}
+        print(e)
+        return error_message, 500
     
 @Empleados.route("/notificacion_empleado")
 class EmployeesSumary(Resource):

@@ -3,6 +3,7 @@ from ..models.Empleador.tbl_aichamba_trabajos import tbl_aichamba_trabajos
 from ..logic.crear_empleador import create_empleador_from_json
 from ..logic.crear_notificacion_empleador import create_notificacion_empleador_from_json
 from..logic.crear_trabajo import crear_trabajo 
+from ..logic.crear_postulacion import crear_postulacion
 from flask import jsonify, request, make_response
 from flask_restx import Resource, Namespace
 from ..Utils.db import db
@@ -83,13 +84,13 @@ class Trabajos(Resource):
         return response
     
 @Empleadores.route("/postulacion")
-class Trabajos(Resource):
+class Postulacion(Resource):
     @Empleadores.expect(nueva_postulacion)
     def post(self):
         
         data = request.json
 
-        postulacion_nueva = crear_trabajo(data)
+        postulacion_nueva = crear_postulacion(data)
 
         # Agrega y guarda en la base de datos
         db.session.add(postulacion_nueva)
