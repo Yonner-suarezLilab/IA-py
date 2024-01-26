@@ -1,7 +1,6 @@
 from ..models.Empleado.tbl_aichamba_notificacion_empleado import tbl_aichamba_notificacion_empleado
 
 def create_notificacion_empleado_from_json(data):
-    print("DAAAATTTAA", data.get("idempleado"), data.get("idempleador"))
     nueva_notificacion = tbl_aichamba_notificacion_empleado(
         mensaje_notificacion=data.get("mensaje_notificacion"),
         idempleado=data.get("idempleado"),

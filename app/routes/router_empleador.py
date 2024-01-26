@@ -1,7 +1,8 @@
+from ..api_models import  nuevo_empleador, nueva_notificacion_empleador, nuevo_trabajo, nueva_postulacion
 from ..models.Empleador.tbl_aichamba_trabajos import tbl_aichamba_trabajos 
-from ..api_models import  nuevo_empleador, nueva_notificacion_empleador
 from ..logic.crear_empleador import create_empleador_from_json
 from ..logic.crear_notificacion_empleador import create_notificacion_empleador_from_json
+from..logic.crear_trabajo import crear_trabajo 
 from flask import jsonify, request, make_response
 from flask_restx import Resource, Namespace
 from ..Utils.db import db
@@ -47,7 +48,7 @@ class Empleador(Resource):
         return response
 
 @Empleadores.route("/notificacion_empleador")
-class EmployeesSumary(Resource):
+class Notificacion(Resource):
     @Empleadores.expect(nueva_notificacion_empleador)
     def post(self):
         
@@ -60,5 +61,40 @@ class EmployeesSumary(Resource):
         db.session.commit()
 
         response = make_response({"message": "Notificación creada exitosamente"}, 200)
+        
+        return response
+
+
+@Empleadores.route("/trabajo")
+class Trabajos(Resource):
+    @Empleadores.expect(nuevo_trabajo)
+    def post(self):
+        
+        data = request.json
+
+        trabajo_nuevo = crear_trabajo(data)
+
+        # Agrega y guarda en la base de datos
+        db.session.add(trabajo_nuevo)
+        db.session.commit()
+
+        response = make_response({"message": "Trabajo creado exitosamente"}, 200)
+        
+        return response
+    
+@Empleadores.route("/postulacion")
+class Trabajos(Resource):
+    @Empleadores.expect(nueva_postulacion)
+    def post(self):
+        
+        data = request.json
+
+        postulacion_nueva = crear_trabajo(data)
+
+        # Agrega y guarda en la base de datos
+        db.session.add(postulacion_nueva)
+        db.session.commit()
+
+        response = make_response({"message": "Postulacion creada exitosamente"}, 200)
         
         return response

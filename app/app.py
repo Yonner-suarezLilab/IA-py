@@ -22,7 +22,7 @@ with app.app_context():
 CORS(app, resources={r"/*": {"origins": "*"}})
 
 
-api.add_namespace(Empleados, path='/Empleado')
-api.add_namespace(Empleadores, path='/Empleador')
+api.add_namespace(Empleados, path='')
+api.add_namespace(Empleadores, path='')
 
 

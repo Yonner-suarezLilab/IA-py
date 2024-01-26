@@ -25,8 +25,8 @@ class tbl_aichamba_notificacion_empleado(db.Model):
 
     def __init__(self, mensaje_notificacion, idempleado, idempleador, activo):
         self.aich_vch_mensaje_notificacion = mensaje_notificacion
-        self.aich_vch_idempleado = idempleado
-        self.aich_vch_idempleador = idempleador
+        self.aich_int_idempleado = idempleado
+        self.aich_int_idempleador = idempleador
         self.aich_bit_activo = activo
 
     def __repr__(self):
