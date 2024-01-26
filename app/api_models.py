@@ -15,7 +15,9 @@ nuevo_empleado = api.model("nuevo_empleado", {
     "Imagen": fields.String,
     "Rol": fields.String,
     "TrabajosRealizados": fields.Integer,
-    "Resumen": fields.String
+    "Resumen": fields.String,
+    "Latitud": fields.String,
+    "Longitud": fields.String
 })
 
 
@@ -28,7 +30,9 @@ nuevo_empleador = api.model("nuevo_empleador", {
     "Direccion": fields.String(description="Dirección del empleador"),
     "Telefono": fields.String(description="Teléfono del empleador"),
     "Foto": fields.String(description="URL de la foto del empleador"),
-    "Rol": fields.String(description="Rol del empleador")  
+    "Rol": fields.String(description="Rol del empleador"),
+    "Latitud": fields.String,
+    "Longitud": fields.String
 })
 
 

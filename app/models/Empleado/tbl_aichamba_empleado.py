@@ -15,7 +15,9 @@ class tbl_aichamba_empleado(db.Model):
     aich_vch_rol = db.Column(db.String(80))
     aich_vch_trabajos_realizados = db.Column(db.Integer)
     aich_vch_Resumen = db.Column(db.Text)
-    aich_bit_activo = db.Column(db.Integer)
+    aich_bit_activo = db.Column(db.Integer)    
+    aich_vch_longitud = db.Column(db.Text, nullable = False)
+    aich_vch_latitud = db.Column(db.Text, nullable = False)
 
 
     def to_dict(self):
@@ -33,10 +35,13 @@ class tbl_aichamba_empleado(db.Model):
             "aich_vch_rol": self.aich_vch_rol,
             "aich_vch_trabajos_realizados": self.aich_vch_trabajos_realizados,
             "aich_vch_Resumen": self.aich_vch_Resumen,
-            "aich_bit_activo": self.aich_bit_activo
+            "aich_bit_activo": self.aich_bit_activo,
+            "aich_vch_longitud": self.aich_vch_longitud,
+            "aich_vch_latitud": self.aich_vch_latitud
         }
 
-    def __init__(self, nombre, email, apellido, documento, ocupacion, reputacion, direccion, telefono, imagen, rol, trabajos_realizados, resumen):
+    def __init__(self, nombre, email, apellido, documento, ocupacion, reputacion, direccion, telefono, imagen, rol, trabajos_realizados, resumen, longitud, latitud):
+       
         self.aich_vch_nombre = nombre
         self.aich_vch_email = email
         self.aich_vch_apellido = apellido
@@ -48,7 +53,9 @@ class tbl_aichamba_empleado(db.Model):
         self.aich_vch_imagen = imagen
         self.aich_vch_rol = rol
         self.aich_vch_trabajos_realizados = trabajos_realizados
-        self.aich_vch_Resumen = resumen
+        self.aich_vch_Resumen = resumen,
+        self.aich_vch_longitud = longitud,
+        self.aich_vch_latitud = latitud
         self.aich_bit_activo = 1
 
     def __repr__(self):

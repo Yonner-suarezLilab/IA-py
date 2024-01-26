@@ -1,6 +1,7 @@
 from ..models.Empleador.tbl_aichamba_empleador import tbl_aichamba_empleador
 
 def create_empleador_from_json(args_dict):
+    print("ARGSSSS", args_dict)
     nuevo_empleador = tbl_aichamba_empleador(
       nombre=args_dict.get("Nombre"),
       email=args_dict.get("Email"),
@@ -10,6 +11,8 @@ def create_empleador_from_json(args_dict):
       telefono=args_dict.get("Telefono"),
       foto=args_dict.get("Foto"),
       rol=args_dict.get("Rol"),
+      latitud= args_dict.get("Latitud"),
+      longitud=args_dict.get("Longitud"),
       activo=1  # O el valor que necesites para activo
       )
 
