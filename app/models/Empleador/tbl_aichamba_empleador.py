@@ -9,7 +9,7 @@ class tbl_aichamba_empleador(db.Model):
     aich_vch_documento = db.Column(db.Integer)
     aich_vch_direccion = db.Column(db.String(120))
     aich_vch_telefono = db.Column(db.String(20))
-    aich_vch_foto = db.Column(db.String(120))
+    aich_vch_foto = db.Column(db.Text)
     aich_vch_rol = db.Column(db.String(80))
     aich_bit_activo = db.Column(db.Integer)
 
