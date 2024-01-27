@@ -1,6 +1,6 @@
-from ..api_models import  nuevo_empleador, nueva_notificacion_empleador, nuevo_trabajo, nueva_postulacion
+from ..api_models import  nuevo_empleador, nueva_notificacion_empleador, nuevo_trabajo, nueva_postulacion, nuevo_chat
 from ..models.Empleador.tbl_aichamba_trabajos import tbl_aichamba_trabajos 
-from ..models.Empleador.tbl_aichamba_trabajos_postulaciones import tbl_aichamba_trabajos_postulaciones
+from ..models.Intermedios.tbl_aichamba_trabajos_postulaciones import tbl_aichamba_trabajos_postulaciones
 from ..logic.crear_empleador import create_empleador_from_json
 from ..logic.crear_notificacion_empleador import create_notificacion_empleador_from_json
 from..logic.crear_trabajo import crear_trabajo 
@@ -220,3 +220,4 @@ class NotificacionesEmpleador(Resource):
         error_message = {"error": str(e)}
         print(e)
         return error_message, 500
+      

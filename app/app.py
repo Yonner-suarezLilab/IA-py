@@ -3,6 +3,7 @@ from .extensions import api
 from flask_cors import CORS
 from .routes.router_empleado import Empleados
 from.routes.router_empleador import Empleadores
+from .routes.router_chat import Chat
 from .Utils.db import db
 from .config import SQLALCHEMY_DATABASE_URI
 
@@ -24,5 +25,6 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 
 api.add_namespace(Empleados, path='')
 api.add_namespace(Empleadores, path='')
+api.add_namespace(Chat, path="")
 
 

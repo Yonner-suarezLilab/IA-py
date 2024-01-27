@@ -1,4 +1,4 @@
-from ..models.Empleador.tbl_aichamba_trabajos_postulaciones import tbl_aichamba_trabajos_postulaciones
+from ..models.Intermedios.tbl_aichamba_trabajos_postulaciones import tbl_aichamba_trabajos_postulaciones
 
 
 def crear_postulacion(data):

@@ -1,4 +1,4 @@
-from ..models.Empleador.tbl_aichamba_trabajos_postulaciones import tbl_aichamba_trabajos_postulaciones
+from ..models.Intermedios.tbl_aichamba_trabajos_postulaciones import tbl_aichamba_trabajos_postulaciones
 from ..models.Empleado.tbl_aichamba_empleado import tbl_aichamba_empleado
 from ..models.Empleador.tbl_aichamba_trabajos import tbl_aichamba_trabajos 
 from flask_restx import Resource, Namespace

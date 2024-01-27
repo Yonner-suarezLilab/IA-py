@@ -70,3 +70,11 @@ notificar_postulacion = api.model("Notificar_Postulacion", {
     "idempleado": fields.Integer(description="ID del empleado", required=True),
     "idempleador": fields.Integer(description="ID del empleador", required=True),
 })
+
+nuevo_chat = api.model("nuevo_chat",{
+    "id_empleador": fields.Integer,
+    "id_empleado": fields.Integer,
+    "mensaje": fields.String
+})
+
+
