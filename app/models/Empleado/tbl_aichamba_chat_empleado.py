@@ -3,7 +3,7 @@ from ...Utils.db import db
 class tbl_aichamba_chat_empleado(db.Model):
     aich_int_id_chat_empleado = db.Column(db.Integer, primary_key=True, autoincrement=True)
     aich_int_id_empleado = db.Column(db.Integer, nullable=False)
-    aich_vch_mensaje = db.Column(db.Text, nullable=False)
+    aich_vch_mensaje = db.Column(db.Text, nullable=True)
     aich_bit_estado = db.Column(db.Integer, nullable=False)
 
     def to_dict(self):

@@ -9,3 +9,4 @@ python-decouple
 Flask-Cors
 mysqlclient
 python-dotenv
+flask-socketio

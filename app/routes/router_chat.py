@@ -82,15 +82,14 @@ class Chats(Resource):
         tbl_aichamba_empleador,
         tbl_aichamba_empleador.aich_int_idempleador == tbl_aichamba_chat_relacion.aich_int_id_empleador
     )
-    .filter(
-        tbl_aichamba_chat_empleado.aich_int_id_empleado == id_empleado,
-        tbl_aichamba_chat_empleador.aich_int_id_empleador == id_empleador,
-        tbl_aichamba_empleado.aich_int_idempleado == id_empleado,
-        tbl_aichamba_empleador.aich_int_idempleador == id_empleador
-    )
+    # .filter(
+    #     tbl_aichamba_chat_empleado.aich_int_id_empleado == id_empleado,
+    #     tbl_aichamba_chat_empleador.aich_int_id_empleador == id_empleador,
+    #     tbl_aichamba_empleado.aich_int_idempleado == id_empleado,
+    #     tbl_aichamba_empleador.aich_int_idempleador == id_empleador
+    # )
     .all()
 )
-
 
 
         data = [
@@ -102,11 +101,15 @@ class Chats(Resource):
         "nombre_empleado": empleado.aich_vch_nombre,
         "id_empleado": empleado.aich_int_idempleado,
     }
-    for empleado, empleador, relacion, chat_empleado, chat_empleador in resultados
+    for chat_empleado, chat_empleador, relacion, empleado, empleador in resultados
 ]
+
         return jsonify({"response": data})
 
       # except Exception as e:
       #   error_message = {"error": str(e)}
       #   print(e)
       #   return error_message, 500
+    
+    ##
+
