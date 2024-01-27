@@ -51,7 +51,8 @@ nueva_notificacion_empleador = api.model("NotificacionEmpleador", {
 
 nuevo_trabajo = api.model("Trabajo",{
     "idEmpleador": fields.Integer,
-    "Descripcion": fields.String
+    "Descripcion": fields.String,
+    "Imagen": fields.String
 })
 
 nueva_postulacion = api.model("Nueva_postulacion", {
