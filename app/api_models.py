@@ -74,7 +74,9 @@ notificar_postulacion = api.model("Notificar_Postulacion", {
 nuevo_chat = api.model("nuevo_chat",{
     "id_empleador": fields.Integer,
     "id_empleado": fields.Integer,
-    "mensaje": fields.String
+    "mensaje": fields.String,
+    "emisor": fields.Integer,
+    "receptor": fields.Integer,
 })
 
 
