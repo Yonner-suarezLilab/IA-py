@@ -1,8 +1,7 @@
+# Ignorar archivos generados automáticamente por Python
 __pycache__/
-__pycache__
-__pycache__/extensions.cpython-312.pyc
-__pycache__/api_models.cpython-312.pyc
-__pycache__/__init__.cpython-312.pyc
+*.pyc
+
 
 .env
 env/

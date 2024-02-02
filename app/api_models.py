@@ -80,3 +80,10 @@ nuevo_chat = api.model("nuevo_chat",{
 })
 
 
+request_match = api.model("request_IA", {
+  "peticion_match": fields.String
+})
+
+request_jobee = api.model("request_jobee",{
+    "pregunta":fields.String  
+})
